@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class Message extends component {
+class Message extends Component {
   render() {
     return null;
     //call the renderlist function
