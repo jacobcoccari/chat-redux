@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
+import messagesReducer from './reducers/messages_reducer'
 // internal modules
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
@@ -30,14 +31,16 @@ const initialState = {
 };
 
 const reducers = combineReducers({
-  changeMe: (state = null, action) => state
+  changeMe: (state = null, action) => state,
+  messages: messagesReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
+const store = createStore(reducers, initialState, middlewares);
 
 // render an instance of the component in the DOM
 ReactDOM.render(
-  <Provider store={createStore(reducers, initialState, middlewares)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('root')

@@ -1,12 +1,10 @@
-export default function fetchMessage(state = null, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+import { FETCH_MESSAGES } from '../actions/index'
 
-export default function createMessage(state = null, action) {
+export default function(state = null, action) {
   switch (action.type) {
+    case FETCH_MESSAGES: {
+      return action.payload.messages;
+    }
     default:
       return state;
   }

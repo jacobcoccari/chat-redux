@@ -14,10 +14,12 @@ class MessageList extends Component {
   }
 }
 
-  function mapReduxStateToProps(initialState) {
-    return {
-      messages: initialState.messages
-    };
-  }
+function mapReduxStateToProps(state) {
+  console.log(state);
+  return {
+    messages: state.messages
+  };
+}
+
 
 export default connect(mapReduxStateToProps)(MessageList);
