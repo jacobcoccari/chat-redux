@@ -10,12 +10,11 @@ class MessageList extends Component {
   }
 
   render() {
-    <ul>{this.renderlist()}</ul>    //call the renderlist function
+    return (<ul>{this.renderlist()}</ul> );   //call the renderlist function
   }
 }
 
 function mapReduxStateToProps(state) {
-  console.log(state);
   return {
     messages: state.messages
   };

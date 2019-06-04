@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Message extends Component {
   render() {
-    <li>{props.content}</li>
+    return(<li>{this.props.content}</li>);
     //call the renderlist function
   }
 }
