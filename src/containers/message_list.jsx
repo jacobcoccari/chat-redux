@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import Message from '../components/message';
+
 class MessageList extends component {
   renderlist = () => {
     return null;
@@ -18,3 +20,5 @@ class MessageList extends component {
     }
   }
 }
+
+export default MessageList;
