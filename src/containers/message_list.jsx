@@ -4,19 +4,19 @@ import { connect } from 'react-redux';
 
 import Message from '../components/message.jsx';
 
-class MessageList extends component {
+class MessageList extends Component {
   renderlist = () => {
-    return (this.props.messages.map((message) => <Message author={message.author} content={message.content} createdAt={message.created_at} />));
+    return(this.props.messages.map((message) => <Message author={message.author} content={message.content} createdAt={message.created_at} />));
   }
 
   render() {
-    return null;    //call the renderlist function
+    <ul>{this.renderlist()}</ul>    //call the renderlist function
   }
 }
 
   function mapReduxStateToProps(initialState) {
     return {
-      messages: props.messages
+      messages: initialState.messages
     };
   }
 
