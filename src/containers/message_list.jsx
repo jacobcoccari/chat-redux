@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchMessages } from '../actions';
 
 import Message from '../components/message.jsx';
+import MessageForm from './message_form.jsx';
+
 
 class MessageList extends Component {
   renderlist = () => {
@@ -16,7 +18,9 @@ class MessageList extends Component {
   }
 
   render() {
-    return (<ul>{this.renderlist()}</ul> );   //call the renderlist function
+    return (<div><ul>{this.renderlist()}</ul>
+      <MessageForm /> </div>
+    );   //call the renderlist function
   }
 }
 
