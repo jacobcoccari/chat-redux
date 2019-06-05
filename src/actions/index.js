@@ -16,7 +16,7 @@ export function fetchMessages(channel) {
 }
 
 export function createMessage(channel, author, content) {
-  const url = base_url + '/general' + '/messages';
+  const url = base_url + '/' + channel + '/messages';
   const body = { author, content };
   console.log(author);
   const promise = fetch(url, {
