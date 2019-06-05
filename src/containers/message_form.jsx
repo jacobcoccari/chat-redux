@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { fetchMessages } from '../actions';
+import { createMessage } from '../actions/index';
 
 class MessageForm extends Component {
   constructor(props) {
@@ -14,11 +15,14 @@ class MessageForm extends Component {
   }
 
   handleSubmit = (event) => {
-    return null;
+    event.preventDefault();
+    this.props.createMessage(this.props.selectedChannel, this.props.currentUser, this.state.value);
+    this.setState({ value: '' });
     //enter a this.setstate method in here
   }
+
   render() {
-    return (<form onSubmit={this.handleSubmit}>
+    return (<form onSubmit={this.handleSubmit} >
       <input
         ref={(input) => { this.messageBox = input; }}
         type="text"
