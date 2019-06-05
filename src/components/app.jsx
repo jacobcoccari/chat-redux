@@ -5,11 +5,11 @@ import ChannelList from '../containers/channel_list.jsx';
 
 const App = () => {
   return (
-    <div className="app">
-      <div className='channel-list'>
+    <div className="app container">
+      <div className='channel-list col-lg-4'>
         <ChannelList />
       </div>
-      <div className="message-list">
+      <div className="message-list col-lg-8">
         <MessageList />
       </div>
     </div>
