@@ -12,6 +12,8 @@ import '../assets/stylesheets/application.scss';
 
 // State and reducers
 
+const identityReducer = (state = null) => state;
+
 const initialState = {
   messages: [
   {
@@ -32,7 +34,9 @@ const initialState = {
 
 const reducers = combineReducers({
   changeMe: (state = null, action) => state,
-  messages: messagesReducer
+  messages: messagesReducer,
+  channels: identityReducer,
+  currentUser: identityReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);

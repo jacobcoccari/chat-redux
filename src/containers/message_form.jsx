@@ -35,4 +35,15 @@ class MessageForm extends Component {
   }
 }
 
-export default MessageForm;
+function mapReduxStateToProps(state) {
+  return {
+    currentUser: state.currentUser,
+    selectedChannel: state.selectedChannel
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ createMessage }, dispatch);
+}
+
+export default connect(mapReduxStateToProps, mapDispatchToProps)(MessageForm);

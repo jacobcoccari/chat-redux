@@ -13,7 +13,6 @@ class MessageList extends Component {
   }
 
   componentWillMount() {
-    console.log(this.selectedChannel);
     fetchMessages(this.selectedChannel);
   }
 
@@ -27,7 +26,7 @@ class MessageList extends Component {
 function mapReduxStateToProps(state) {
   return {
     messages: state.messages,
-    selectedChannel: state.selectedChannel
+    selectedChannel: state.selectedChannel,
   };
 }
 
