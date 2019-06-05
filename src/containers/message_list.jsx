@@ -12,6 +12,8 @@ class MessageList extends Component {
     return(this.props.messages.map((message) => <Message author={message.author} content={message.content} createdAt={message.created_at} />));
   }
 
+  //this fetches the messages and resubmits the request ever 5000? not sure the unit.
+
   componentWillMount() {
     this.props.fetchMessages('general');
   }
