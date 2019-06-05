@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MessageList from '../containers/message_list.jsx';
-import ChannelList from '../contaniers/channel_list';
+import ChannelList from '../containers/channel_list.jsx';
 
 const App = () => {
   return (
