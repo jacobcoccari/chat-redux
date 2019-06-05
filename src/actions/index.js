@@ -5,7 +5,7 @@ export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 
 export function fetchMessages(channel) {
-  const url = '${base_url}/general/messages';
+  const url = base_url + '/general' + '/messages';
   const promise = fetch(url).then(r => r.json());
 
   return {
@@ -15,9 +15,9 @@ export function fetchMessages(channel) {
 }
 
 export function createMessage(channel, author, content) {
-  const url = `${BASE_URL}/${channel}/messages`;
+  const url = base_url + '/general' + '/messages';
   const body = { author, content };
-
+  console.log(author);
   const promise = fetch(url, {
     method: 'POST',
     headers: {
