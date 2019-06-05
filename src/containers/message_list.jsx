@@ -19,11 +19,11 @@ class MessageList extends Component {
   }
 
   componentDidMount() {
-    this.refresher = setInterval(this.props.fetchMessages, 5000);
+    // this.refresher = setInterval(this.props.fetchMessages, 5000);
   }
 
   componentWillUnmount() {
-    clearInterval(this.refresher);
+    // clearInterval(this.refresher);
   }
 
   render() {
