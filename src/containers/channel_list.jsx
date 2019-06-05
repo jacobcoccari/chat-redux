@@ -17,6 +17,12 @@ class ChannelList extends Component {
       );
   }
 
+  static getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.selectedChannel !== this.props.selectedChannel) {
+      this.props.fetchMessages(nextprops.selectedChannel);
+    }
+  }
+
   handleClick = (channel) => {
     return this.props.selectChannel(channel);
   }
@@ -38,5 +44,6 @@ function mapReduxStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ selectChannel, fetchMessages }, dispatch);
 }
+
 
 export default connect(mapReduxStateToProps, mapDispatchToProps)(ChannelList);
