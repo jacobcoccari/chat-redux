@@ -36,10 +36,8 @@ export function createMessage(channel, author, content) {
 }
 
 export function selectChannel(channel) {
-  const url = base_url +'/' + channel + '/messages';
-  const promise = fetch(url).then(r => r.json());
   return {
     type: SELECT_CHANNEL,
-    payload: promise
+    payload: channel
   }
 }

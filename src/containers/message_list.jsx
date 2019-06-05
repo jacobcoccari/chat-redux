@@ -27,7 +27,6 @@ class MessageList extends Component {
   }
 
   fetchMessages = () => {
-    console.log(this.props.selectedChannel);
     return this.props.fetchMessages(this.props.selectedChannel);
   }
 
