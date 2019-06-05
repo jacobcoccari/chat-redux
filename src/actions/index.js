@@ -6,7 +6,7 @@ export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 export const SELECT_CHANNEL = 'SELECT_CHANNEL';
 
 export function fetchMessages(channel) {
-  const url = base_url + '/general' + '/messages';
+  const url = base_url + '/' + channel + '/messages';
   const promise = fetch(url).then(r => r.json());
 
   return {

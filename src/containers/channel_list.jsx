@@ -17,9 +17,9 @@ class ChannelList extends Component {
       );
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.selectedChannel !== this.props.selectedChannel) {
-      this.props.fetchMessages(nextprops.selectedChannel);
+      this.props.fetchMessages(nextProps.selectedChannel);
     }
   }
 

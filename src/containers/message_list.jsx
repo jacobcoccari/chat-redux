@@ -15,15 +15,20 @@ class MessageList extends Component {
   //this fetches the messages and resubmits the request ever 5000? not sure the unit.
 
   componentWillMount() {
-    this.props.fetchMessages('general');
+    this.fetchMessages();
   }
 
   componentDidMount() {
-    // this.refresher = setInterval(this.props.fetchMessages, 5000);
+    this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
   componentWillUnmount() {
-    // clearInterval(this.refresher);
+    clearInterval(this.refresher);
+  }
+
+  fetchMessages = () => {
+    console.log(this.props.selectedChannel);
+    return this.props.fetchMessages(this.props.selectedChannel);
   }
 
   render() {

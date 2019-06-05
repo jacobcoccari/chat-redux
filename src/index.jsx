@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
-import messagesReducer from './reducers/messages_reducer'
+import messagesReducer from './reducers/messages_reducer';
+import selectedChannelReducer from './reducers/selected_channel_reducer';
 // internal modules
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
@@ -36,7 +37,8 @@ const reducers = combineReducers({
   changeMe: (state = null, action) => state,
   messages: messagesReducer,
   channels: identityReducer,
-  currentUser: identityReducer
+  currentUser: identityReducer,
+  selectedChannel: selectedChannelReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
