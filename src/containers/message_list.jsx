@@ -18,8 +18,8 @@ class MessageList extends Component {
   }
 
   render() {
-    return (<div><ul>{this.renderlist()}</ul>
-      <MessageForm /> </div>
+    return (<div><div><ul>{this.renderlist()}</ul></div>
+      <div><MessageForm /></div> </div>
     );   //call the renderlist function
   }
 }

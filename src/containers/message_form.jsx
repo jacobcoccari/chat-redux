@@ -4,8 +4,25 @@ import { connect } from 'react-redux';
 import { fetchMessages } from '../actions';
 
 class MessageForm extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: '' };
+  }
+
+  handleSubmit(event) {
+    return null;
+    //enter a this.setstate method in here
+  }
   render() {
-    return ( <h1>FUCKERS </h1> )
+    return (<form onSubmit={this.handleSubmit}>
+      <input
+        ref={(input) => { this.messageBox = input; }}
+        type="text"
+        className="form-control"
+        value={this.state.value}
+        />
+        <button type="submit"> Send </button>
+      </form>);
   }
 }
 
