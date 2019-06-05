@@ -13,7 +13,15 @@ class MessageList extends Component {
   }
 
   componentWillMount() {
-    fetchMessages(this.selectedChannel);
+    this.props.fetchMessages('general');
+  }
+
+  componentDidMount() {
+    this.refresher = setInterval(this.props.fetchMessages, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
   }
 
   render() {
