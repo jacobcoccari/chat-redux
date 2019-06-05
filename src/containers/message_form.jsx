@@ -9,7 +9,11 @@ class MessageForm extends Component {
     this.state = { value: '' };
   }
 
-  handleSubmit(event) {
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit = (event) => {
     return null;
     //enter a this.setstate method in here
   }
@@ -20,6 +24,7 @@ class MessageForm extends Component {
         type="text"
         className="form-control"
         value={this.state.value}
+        onChange={this.handleChange}
         />
         <button type="submit"> Send </button>
       </form>);
