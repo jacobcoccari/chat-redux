@@ -23,6 +23,7 @@ class MessageForm extends Component {
 
   render() {
     return (<form onSubmit={this.handleSubmit} >
+
       <input
         ref={(input) => { this.messageBox = input; }}
         type="text"

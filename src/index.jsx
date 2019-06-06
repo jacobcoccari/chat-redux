@@ -7,6 +7,9 @@ import { logger } from 'redux-logger';
 import reduxPromise from 'redux-promise';
 import messagesReducer from './reducers/messages_reducer';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
+import { BrowserRouter as Router, Route, Redirect, Switch }
+from 'react-router-dom';
+import { createHistory as history } from 'history';
 // internal modules
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
@@ -47,7 +50,12 @@ const store = createStore(reducers, initialState, middlewares);
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router history={history}>
+      <Switch>
+        <Route path="/:channel" component={App} />
+        <Redirect from="/" to="/general" />
+      </Switch>
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
